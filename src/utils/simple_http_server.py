@@ -30,6 +30,7 @@ from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
 Validates IPv4 addresses.
 """
 def is_valid_ipv4(ip_addr):
+    if len(ip_addr.split('.'))<4:return False
     pattern = re.compile(r"""
         ^
         (?:
